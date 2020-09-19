@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "431044135655",
+    "firebase_url": "https://sleeppaternmanager.firebaseio.com",
+    "project_id": "sleeppaternmanager",
+    "storage_bucket": "sleeppaternmanager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431044135655:android:fea74bbc3c2b86208bb042",
+        "android_client_info": {
+          "package_name": "com.example.sleeppaternmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431044135655-paj0b398rue5dn3gco02ji613vjvt1bp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sleeppaternmanager",
+            "certificate_hash": "48a4ccd95911fda59458d7465e875780ca4b70e0"
+          }
+        },
+        {
+          "client_id": "431044135655-es66ava3t251705bqlu8fvt5jriku9nn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB_KW_60m2XL-c0v5O8muHv2l4E6FCF7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431044135655-es66ava3t251705bqlu8fvt5jriku9nn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

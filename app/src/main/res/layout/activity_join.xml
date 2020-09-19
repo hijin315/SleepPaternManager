@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/joinToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/joinBackBtn"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="?attr/actionModeCloseDrawable"
+            android:backgroundTint="#2196F3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="회원가입"
+            android:textSize="22dp"
+            android:textColor="#000000" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/joinNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:hint="이름"
+        android:onClick="onJoinEditTextClick"
+        android:singleLine="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/joinToolbar" />
+    <TextView
+        android:id="@+id/joinNameTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/joinNameEt"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="#ff0000"/>
+
+    <EditText
+        android:id="@+id/joinIdEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:hint="아이디"
+        android:onClick="onJoinEditTextClick"
+        android:singleLine="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/joinNameEt" />
+    <TextView
+        android:id="@+id/joinIdTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/joinIdEt"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="#ff0000"/>
+
+    <EditText
+        android:id="@+id/joinPwEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        android:onClick="onJoinEditTextClick"
+        android:singleLine="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/joinIdEt" />
+    <TextView
+        android:id="@+id/joinPwTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/joinPwEt"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="#ff0000"/>
+
+    <EditText
+        android:id="@+id/joinPwCfEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:hint="비밀번호 확인"
+        android:inputType="textPassword"
+        android:onClick="onJoinEditTextClick"
+        android:singleLine="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/joinPwEt" />
+    <TextView
+        android:id="@+id/joinPwCfTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/joinPwCfEt"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="#ff0000"/>
+
+    <EditText
+        android:id="@+id/joinTelEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:hint="전화번호(선택)"
+        android:singleLine="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/joinPwCfEt" />
+
+    <Button
+        android:id="@+id/joinJoinBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/joinTelEt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="등록" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/solution_noexist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:text="~솔루션이 없습니다~ \n위를 당겨서 새로고침 해주세요" />
+
+    <ImageView
+        android:id="@+id/solution_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/unverified"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"/>
+
+
+
+    <TextView
+        android:visibility="visible"
+        android:textStyle="bold"
+        android:id="@+id/solution_contents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/solution_icon"
+        android:layout_marginLeft="25dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="7pt"
+        android:textColor="#000000"
+        android:text="솔루션 내용"/>
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/solution_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/solution_contents"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="5pt"
+        android:textColor="#ff0000"
+        android:text="필수"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

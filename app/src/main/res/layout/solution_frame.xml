@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_todaySolution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/mainfont"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="오늘의 솔루션"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/progress_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_star"
+        app:layout_constraintTop_toBottomOf="@id/layout_todaySolution"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/mainfont"
+            android:text="0주차 진행 중 D - 0"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/solutions_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_title">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <ListView
+                android:id="@+id/solution_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </ListView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
