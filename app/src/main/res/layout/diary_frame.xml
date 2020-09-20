@@ -2,171 +2,263 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
     <TextView
-        android:padding="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="수면일기"
-        android:textStyle="bold"
         android:gravity="center"
-        android:textSize="30dp"/>
+        android:padding="20dp"
+        android:text="수면일기"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
     <LinearLayout
-        android:padding="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. 지난밤, 몇 시에 잠자리에 누웠는가?"
             android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1. 지난밤, 몇 시에 잠자리에 누웠는가?"/>
+            android:textStyle="bold" />
+
         <EditText
+            android:digits="0123456789"
+            android:inputType="number"
             android:id="@+id/diary1"
-            android:textSize="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:gravity="end"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="1~24"/>
-        <TextView
             android:gravity="end"
+            android:hint="1~24"
+            android:textSize="14dp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="시"/>
+            android:gravity="end"
+            android:text="시" />
     </LinearLayout>
+
     <TextView
-        android:textSize="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
+        android:id="@+id/diary1tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
+        android:gravity="end"
+        android:textColor="#ff0000" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="2. 밤 중에 대략 몇 번이나 잠에서 깨었고, 평균적으로 얼마나 오래 깨어 있었는가?"/>
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text="2. 밤 중에 대략 몇 번이나 잠에서 깨었고, 평균적으로 얼마나 오래 깨어 있었는가?"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <EditText
-            android:id="@+id/diary2_1"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:id="@+id/diary2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:gravity="end"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14dp"
-            android:hint="안깬경우 0"/>
-        <TextView
             android:gravity="end"
+            android:hint="안깬경우 0"
+            android:textSize="14dp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="번, "/>
+            android:gravity="end"
+            android:text="번, " />
+
         <EditText
-            android:id="@+id/diary2_2"
-            android:gravity="end"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14dp"
-            android:hint="30분의 경우 0.5"/>
-        <TextView
-            android:gravity="end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="시간"/>
-    </LinearLayout>
-    <LinearLayout
-        android:padding="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3. 아침에 깬 시각은 몇 시인가?"/>
-        <EditText
+            android:digits="0123456789"
+            android:inputType="number"
             android:id="@+id/diary3"
-            android:textSize="14dp"
-            android:layout_marginLeft="5dp"
-            android:gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="1~24"/>
-        <TextView
             android:gravity="end"
+            android:hint=""
+            android:textSize="14dp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="시"/>
+            android:gravity="end"
+            android:text="분" />
     </LinearLayout>
+
     <LinearLayout
-        android:padding="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="30dp" >
+
         <TextView
-            android:textSize="15dp"
-            android:textStyle="bold"
+            android:id="@+id/diary2tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:textColor="#ff0000" />
+        <TextView
+            android:id="@+id/diary3tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:textColor="#ff0000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4. 최종적으로 잠자리에서 나온 것은 몇 시인가?"/>
+            android:text="3. 아침에 깬 시간은?"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
         <EditText
+            android:digits="0123456789"
+            android:inputType="number"
             android:id="@+id/diary4"
-            android:textSize="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:gravity="end"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="1~24"/>
-        <TextView
             android:gravity="end"
+            android:hint="1~24"
+            android:textSize="14dp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="시"/>
+            android:gravity="end"
+            android:text="시" />
     </LinearLayout>
-    <LinearLayout
-        android:padding="30dp"
+    <TextView
+        android:id="@+id/diary4tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginRight="30dp"
+        android:gravity="end"
+        android:textColor="#ff0000"
+        android:layout_marginBottom="30dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. 최종적으로 잠자리에서 나온 시간은?"
             android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5. 지난밤, 잠을 쉽게 잘 수 있었는가?"/>
+            android:textStyle="bold" />
+
         <EditText
+            android:digits="0123456789"
+            android:inputType="number"
             android:id="@+id/diary5"
-            android:textSize="14dp"
-            android:layout_marginLeft="5dp"
-            android:gravity="end"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="0~5"/>
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:hint="1~24"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="시" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/diary5tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="end"
+        android:textColor="#ff0000" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. 지난밤, 잠을 쉽게 잘 수 있었는가?"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:digits="0123456789"
+            android:inputType="number"
+            android:id="@+id/diary6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:hint="0~5"
+            android:textSize="14dp" />
+
         <TextView
 
-            android:gravity="end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="점"/>
+            android:gravity="end"
+            android:text="점" />
     </LinearLayout>
+    <TextView
+        android:id="@+id/diary6tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:gravity="end"
+        android:textColor="#ff0000"
+        android:layout_marginBottom="30dp" />
     <Button
         android:id="@+id/diarySubmit"
-        android:background="@drawable/ss"
-        android:textStyle="bold"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="제출하기"/>
+        android:layout_gravity="center"
+        android:background="@drawable/ss"
+        android:text="제출하기"
+        android:textStyle="bold" />
 
 </LinearLayout>
