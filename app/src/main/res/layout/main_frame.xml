@@ -37,7 +37,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="220dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,9 +50,9 @@
             android:layout_height="match_parent"/>
 
         <me.relex.circleindicator.CircleIndicator
-            android:id="@+id/mainIndicator"
             android:layout_width="match_parent"
             android:layout_height="38dp"
+            android:id="@+id/mainIndicator"
             app:ci_animator="@animator/indicator_animation"
             app:ci_animator_reverse="@animator/indicator_animation"
             app:ci_drawable="@drawable/black_radius_square"
