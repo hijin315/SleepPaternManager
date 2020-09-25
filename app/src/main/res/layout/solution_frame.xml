@@ -20,7 +20,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="오늘의 솔루션"
-            android:textSize="30dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
