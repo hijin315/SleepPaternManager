@@ -8,7 +8,9 @@ import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import com.prolificinteractive.materialcalendarview.spans.DotSpan;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
 
 /**
@@ -24,6 +26,26 @@ public class EventDecorator implements DayViewDecorator {
         drawable = context.getResources().getDrawable(R.drawable.more);
         this.color = color;
         this.dates = new HashSet<>(dates);
+    }
+
+    public EventDecorator(int color, CalendarDay date, Activity context) {
+        drawable = context.getResources().getDrawable(R.drawable.more);
+        this.color = color;
+        this.dates = new HashSet<>();
+        dates.add(date);
+    }
+
+    public EventDecorator(int color, ArrayList<String> dates, Activity context) {
+        drawable = context.getResources().getDrawable(R.drawable.more);
+        this.color = color;
+        this.dates = new HashSet<>();
+        CalendarDay day;
+
+        for(String date : dates) {
+            String[] slicedate = date.split(",");
+            day = CalendarDay.from(Integer.parseInt(slicedate[0]), Integer.parseInt(slicedate[1])-1, Integer.parseInt(slicedate[2]));
+            this.dates.add(day);
+        }
     }
 
     @Override
