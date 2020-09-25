@@ -43,12 +43,13 @@ public class CalendarFragment extends Fragment {
     Cursor cursor;
     Date today = new Date();
     MaterialCalendarView materialCalendarView;
-
+    TextView calendarList;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.calendar_frame, container, false);
+        calendarList = (TextView)view.findViewById(R.id.calendarList);
         materialCalendarView = (MaterialCalendarView) view.findViewById(R.id.calendarView);
 
         materialCalendarView.state().edit()
@@ -59,7 +60,15 @@ public class CalendarFragment extends Fragment {
                 .commit();
         materialCalendarView.addDecorators(new SundayDecorator(), new SaturdayDecorator(),new OneDayDecorator());
 
-        String[] result = {"2017,03,18","2017,04,18","2017,05,18","2017,06,18"};
+        String[] result = {"2020,09,19","2020,09,20","2020,09,15","2020,09,13"};
+        String cdList = "";
+
+        for(int i=0; i<result.length;i++){
+            cdList += result[i];
+            if(i!=result.length)
+                cdList += "\n";
+        }
+        calendarList.setText(cdList);
         new ApiSimulator(result).executeOnExecutor(Executors.newSingleThreadExecutor());
 
         materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
@@ -69,13 +78,8 @@ public class CalendarFragment extends Fragment {
                 int Month = date.getMonth() + 1;
                 int Day = date.getDay();
 
-                Log.i("Year test", Year + "");
-                Log.i("Month test", Month + "");
-                Log.i("Day test", Day + "");
-
                 String shot_Day = Year + "," + Month + "," + Day;
 
-                Log.i("shot_Day test", shot_Day + "");
                 materialCalendarView.clearSelection();
 
                 Toast.makeText(getActivity(), shot_Day , Toast.LENGTH_SHORT).show();
@@ -130,7 +134,7 @@ public class CalendarFragment extends Fragment {
                 return;
             }
 
-            materialCalendarView.addDecorator(new EventDecorator(Color.GREEN, calendarDays,getActivity()));
+            materialCalendarView.addDecorator(new EventDecorator(Color.RED, calendarDays,getActivity()));
         }
     }
 }
