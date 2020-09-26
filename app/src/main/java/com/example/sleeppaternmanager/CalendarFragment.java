@@ -114,7 +114,7 @@ public class CalendarFragment extends Fragment {
                     cdList += "\n";
                 }
 
-                calendarList.setText(cdList);
+                calendarList.setText(cdList.replace(',','/'));
                 new ApiSimulator(reservedDates).executeOnExecutor(Executors.newSingleThreadExecutor());
 
                 materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
