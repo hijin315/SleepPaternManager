@@ -22,7 +22,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SplashActivity extends Activity {
     boolean idCheck, pwCheck;
@@ -110,9 +113,26 @@ public class SplashActivity extends Activity {
                                                 @Override
                                                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                                                     SolutionFragment.setSolutionData(array_solution);
-                                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                                    startActivity(intent);
-                                                    finish();
+                                                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                                    CollectionReference userdata = db.collection("userdata");
+                                                    userdata.document(savedUserId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                                        @Override
+                                                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                                            if(!documentSnapshot.exists()) {
+                                                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                                                Map<String, Object> data = new HashMap<>();
+                                                                data.put("ReserveDate", Arrays.asList());
+                                                                db.collection("userdata").document(savedUserId).set(data);
+                                                            }
+                                                        }
+                                                    }).addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                                            startActivity(intent);
+                                                            finish();
+                                                        }
+                                                    });
                                                 }
                                             });
                                         }
