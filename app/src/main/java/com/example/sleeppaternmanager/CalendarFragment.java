@@ -62,6 +62,7 @@ public class CalendarFragment extends Fragment {
     String userid;
     String[] reservedDates;
     ArrayList<String> reDates;
+    boolean isNodata;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -96,10 +97,14 @@ public class CalendarFragment extends Fragment {
                 if(task.isSuccessful()) {
                     DocumentSnapshot doc = task.getResult();
                     String str = doc.get("ReserveDate").toString();
-                    str = str.substring(1, str.length()-1);
-                    reservedDates = str.split(", ");
-                    for(String date : reservedDates)
-                        reDates.add(date);
+                    if(!str.equals("[]")) {
+                        isNodata = false;
+                        str = str.substring(1, str.length() - 1);
+                        reservedDates = str.split(", ");
+                        for (String date : reservedDates)
+                            reDates.add(date);
+                    } else
+                        isNodata = true;
                 } else{
                     Log.d("jkjk", "reserveDate Task failed");
                 }
@@ -109,10 +114,15 @@ public class CalendarFragment extends Fragment {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 String cdList = "";
 
-                for(String date : reservedDates) {
-                    cdList += date;
-                    cdList += "\n";
+                if(!isNodata) {
+                    for(String date : reservedDates) {
+                        cdList += date;
+                        cdList += "\n";
+                    }
+                } else {
+                    cdList = "일정이 없습니다.";
                 }
+
 
                 calendarList.setText(cdList.replace(',','/'));
                 new ApiSimulator(reservedDates).executeOnExecutor(Executors.newSingleThreadExecutor());
@@ -146,6 +156,8 @@ public class CalendarFragment extends Fragment {
                                         cdList += s;
                                         cdList += "\n";
                                     }
+                                    if(reDates.isEmpty())
+                                        cdList = "일정이 없습니다.";
                                     calendarList.setText(cdList);
                                 }
                             });
@@ -213,16 +225,17 @@ public class CalendarFragment extends Fragment {
             /*특정날짜 달력에 점표시해주는곳*/
             /*월은 0이 1월 년,일은 그대로*/
             //string 문자열인 Time_Result 을 받아와서 ,를 기준으로짜르고 string을 int 로 변환
-            for(int i = 0 ; i < Time_Result.length ; i ++){
+            if(!isNodata) {
+                for(int i = 0 ; i < Time_Result.length ; i ++){
+                    String[] time = Time_Result[i].split(",");
+                    int year = Integer.parseInt(time[0]);
+                    int month = Integer.parseInt(time[1]);
+                    int dayy = Integer.parseInt(time[2]);
+                    calendar.set(year,month-1,dayy);
+                    CalendarDay day = CalendarDay.from(calendar);
 
-                String[] time = Time_Result[i].split(",");
-                int year = Integer.parseInt(time[0]);
-                int month = Integer.parseInt(time[1]);
-                int dayy = Integer.parseInt(time[2]);
-                calendar.set(year,month-1,dayy);
-                CalendarDay day = CalendarDay.from(calendar);
-
-                dates.add(day);
+                    dates.add(day);
+                }
             }
 
             return dates;

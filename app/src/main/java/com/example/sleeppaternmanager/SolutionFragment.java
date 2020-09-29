@@ -51,7 +51,6 @@ public class SolutionFragment extends Fragment {
         mNow = System.currentTimeMillis();
         mDate = new Date(mNow);
         String todayDate = mFormat.format(mDate);
-        Log.d("hhjjjj",todayDate);
         this.db = FirebaseFirestore.getInstance();
         this.docRef = db.collection("userdata").document(userid).collection(todayDate).document("solutions");
         this.docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -59,14 +58,11 @@ public class SolutionFragment extends Fragment {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if(task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
-                    Log.d("jkjk", document.getId().toString());
                     if(document.exists()) {
-                        //TODO : db에서 솔루션 파싱
                         noSolution = false;
                         int listCount = Integer.parseInt(document.get("listCount").toString());
                             for(int i=0; i < listCount; i++) {
                             String list = document.get("list" + i).toString();
-                            Log.d("jkjk", list);
                             String[] solNcheck = list.split(",");
                             String solution = solNcheck[0].split("=")[1];
                             String isRequiredvalue = solNcheck[1].split("=")[1];
@@ -165,7 +161,6 @@ public class SolutionFragment extends Fragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                //TODO : 리스트 당겨서 새로고침
                 getSolutionData();
             }
         });
@@ -181,7 +176,6 @@ public class SolutionFragment extends Fragment {
             listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(final AdapterView<?> parent, final View view, final int position, long id) {
-                    //TODO : 리스트 아이템 눌러서 제출
                     alertBuilder.setTitle("제출").setMessage("제출하시겠습니까?");
                     alertBuilder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                         @Override

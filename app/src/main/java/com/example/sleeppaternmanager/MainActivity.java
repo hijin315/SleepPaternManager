@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 //FragmentTransaction tr = frManager.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
                 switch (menuItem.getItemId()) {
                     case R.id.nav_main :
-                        //TODO : 네비바 메인
                         frManager.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out).show(mainFr).commit();
                         frManager.beginTransaction().hide(solutionFr).commit();
                         frManager.beginTransaction().hide(chatFr).commit();
@@ -65,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                         frManager.beginTransaction().hide(accountFr).commit();
                         break;
                     case R.id.nav_solution :
-                        //TODO : 네비바 솔루션
                         frManager.beginTransaction().hide(mainFr).commit();
                         frManager.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out).show(solutionFr).commit();
                         frManager.beginTransaction().hide(chatFr).commit();
@@ -73,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                         frManager.beginTransaction().hide(accountFr).commit();
                         break;
                     case R.id.nav_chat :
-                        //TODO : 네비바 채팅
                         frManager.beginTransaction().hide(mainFr).commit();
                         frManager.beginTransaction().hide(solutionFr).commit();
                         frManager.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out).show(chatFr).commit();
@@ -81,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                         frManager.beginTransaction().hide(accountFr).commit();
                         break;
                     case R.id.nav_calendar :
-                        //TODO : 네비바 일정
                         frManager.beginTransaction().hide(mainFr).commit();
                         frManager.beginTransaction().hide(solutionFr).commit();
                         frManager.beginTransaction().hide(chatFr).commit();
@@ -89,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                         frManager.beginTransaction().hide(accountFr).commit();
                         break;
                     case R.id.nav_account :
-                        //TODO : 네비바 설정
                         frManager.beginTransaction().hide(mainFr).commit();
                         frManager.beginTransaction().hide(solutionFr).commit();
                         frManager.beginTransaction().hide(chatFr).commit();

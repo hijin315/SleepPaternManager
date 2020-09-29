@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -32,7 +33,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginActivity extends Activity {
     private String userid, userpw;
@@ -76,7 +80,6 @@ public class LoginActivity extends Activity {
                 FirebaseFirestore userDB = FirebaseFirestore.getInstance();
                 CollectionReference users = userDB.collection("users");
                 Query idQuery = users.whereEqualTo("id", userid);
-
 
                 idQuery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -232,8 +235,25 @@ public class LoginActivity extends Activity {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     SolutionFragment.setSolutionData(array_solution);
-                    successGetDBTask();
-                    asyncDialog.dismiss();
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    CollectionReference userdata = db.collection("userdata");
+                    userdata.document(userid).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if(!documentSnapshot.exists()){
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                Map<String, Object> data = new HashMap<>();
+                                data.put("ReserveDate", Arrays.asList());
+                                db.collection("userdata").document(userid).set(data);
+                            }
+                        }
+                    }).addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            successGetDBTask();
+                            asyncDialog.dismiss();
+                        }
+                    });
                 }
             });
             return array_solution;
