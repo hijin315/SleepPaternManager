@@ -7,12 +7,26 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/mainfont"
         android:gravity="center"
-        android:padding="20dp"
-        android:text="수면일기"
-        android:textSize="30dp"
-        android:textStyle="bold" />
 
+        android:padding="10dp"
+        android:text="수면일기"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:gravity="center"
+        android:background="@drawable/back_star"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/mainfont"
+        android:text="기상 후, 매일 제출해주시길 바랍니다"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
