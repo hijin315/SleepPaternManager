@@ -35,6 +35,7 @@
         android:paddingRight="30dp">
 
         <TextView
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1. 지난밤, 몇 시에 잠자리에 누웠는가?"
@@ -42,6 +43,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:fontFamily="@font/mainfont"
             android:digits="0123456789"
             android:inputType="number"
             android:id="@+id/diary1"
@@ -54,6 +56,7 @@
             android:textSize="14dp" />
 
         <TextView
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
@@ -61,6 +64,7 @@
     </LinearLayout>
 
     <TextView
+        android:fontFamily="@font/mainfont"
         android:id="@+id/diary1tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,6 +73,7 @@
         android:textColor="#ff0000" />
 
     <TextView
+        android:fontFamily="@font/mainfont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
@@ -86,6 +91,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:fontFamily="@font/mainfont"
             android:digits="0123456789"
             android:inputType="number"
             android:id="@+id/diary2"
@@ -98,12 +104,14 @@
             android:textSize="14dp" />
 
         <TextView
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="번, " />
 
         <EditText
+            android:fontFamily="@font/mainfont"
             android:digits="0123456789"
             android:inputType="number"
             android:id="@+id/diary3"
@@ -115,6 +123,7 @@
             android:textSize="14dp" />
 
         <TextView
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
@@ -128,6 +137,7 @@
         android:layout_marginBottom="30dp" >
 
         <TextView
+            android:fontFamily="@font/mainfont"
             android:id="@+id/diary2tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -136,6 +146,7 @@
             android:gravity="end"
             android:textColor="#ff0000" />
         <TextView
+            android:fontFamily="@font/mainfont"
             android:id="@+id/diary3tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -153,6 +164,7 @@
         android:paddingRight="30dp">
 
         <TextView
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3. 아침에 깬 시간은?"
@@ -160,6 +172,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:fontFamily="@font/mainfont"
             android:digits="0123456789"
             android:inputType="number"
             android:id="@+id/diary4"
@@ -172,12 +185,14 @@
             android:textSize="14dp" />
 
         <TextView
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="시" />
     </LinearLayout>
     <TextView
+        android:fontFamily="@font/mainfont"
         android:id="@+id/diary4tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -193,6 +208,7 @@
         android:paddingRight="30dp">
 
         <TextView
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4. 최종적으로 잠자리에서 나온 시간은?"
@@ -200,6 +216,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:fontFamily="@font/mainfont"
             android:digits="0123456789"
             android:inputType="number"
             android:id="@+id/diary5"
@@ -212,12 +229,14 @@
             android:textSize="14dp" />
 
         <TextView
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="시" />
     </LinearLayout>
     <TextView
+        android:fontFamily="@font/mainfont"
         android:id="@+id/diary5tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -233,6 +252,7 @@
         android:paddingRight="30dp">
 
         <TextView
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5. 지난밤, 잠을 쉽게 잘 수 있었는가?"
@@ -240,6 +260,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:fontFamily="@font/mainfont"
             android:digits="0123456789"
             android:inputType="number"
             android:id="@+id/diary6"
@@ -252,13 +273,14 @@
             android:textSize="14dp" />
 
         <TextView
-
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="점" />
     </LinearLayout>
     <TextView
+        android:fontFamily="@font/mainfont"
         android:id="@+id/diary6tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -267,6 +289,7 @@
         android:textColor="#ff0000"
         android:layout_marginBottom="30dp" />
     <Button
+        android:fontFamily="@font/mainfont"
         android:id="@+id/diarySubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

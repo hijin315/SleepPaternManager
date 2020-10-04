@@ -2,13 +2,14 @@ package com.example.sleeppaternmanager;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,14 +20,11 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.CollectionReference;
+
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,7 +36,7 @@ public class DiaryFragment extends Fragment {
     SimpleDateFormat mFormat = new SimpleDateFormat("yyyyMMdd");
     Button diarySubmit;
     String userid;
-    AlertDialog.Builder alertBuilder;
+
 
     @Nullable
     @Override

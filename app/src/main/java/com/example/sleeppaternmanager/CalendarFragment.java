@@ -17,34 +17,24 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 
-import android.annotation.SuppressLint;
-
-import android.content.Intent;
-
-import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
+
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
+
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Query;
+
 import com.google.firestore.v1.Cursor;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -158,7 +148,7 @@ public class CalendarFragment extends Fragment {
                                     }
                                     if(reDates.isEmpty())
                                         cdList = "일정이 없습니다.";
-                                    calendarList.setText(cdList);
+                                    calendarList.setText(cdList.replace(",","/"));
                                 }
                             });
                             alertBuilder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
@@ -184,7 +174,7 @@ public class CalendarFragment extends Fragment {
                                         cdList += s;
                                         cdList += "\n";
                                     }
-                                    calendarList.setText(cdList);
+                                    calendarList.setText(cdList.replace(",","/"));
                                 }
                             });
                             alertBuilder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
