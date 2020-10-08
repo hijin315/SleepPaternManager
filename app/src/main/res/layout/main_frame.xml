@@ -45,7 +45,7 @@
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/mainViewPager"
-            android:background="#FFffffff"
+            android:background="#7a69a5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
