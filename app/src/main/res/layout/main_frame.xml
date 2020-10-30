@@ -6,6 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
+        android:layout_marginTop="17dp"
+        android:padding="40dp"
+        android:background="#00ffffff"
         android:id="@+id/mainLogoIv"
         android:src="@drawable/main_image"
         android:layout_width="match_parent"
@@ -19,7 +22,7 @@
         android:adjustViewBounds="true"
         android:src="@drawable/home_btn1"
         android:scaleType="fitCenter"
-        android:background="#FFffffff"
+        android:background="#00ffffff"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mainLogoIv"
         app:layout_constraintRight_toLeftOf="@id/mainBtn2"/>
@@ -30,7 +33,7 @@
         android:layout_height="150dp"
         android:src="@drawable/home_btn2"
         android:scaleType="fitCenter"
-        android:background="#FFffffff"
+        android:background="#00ffffff"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mainLogoIv"
         app:layout_constraintLeft_toRightOf="@id/mainBtn1" />
