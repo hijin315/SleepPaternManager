@@ -20,6 +20,7 @@
             android:background="?attr/actionModeCloseDrawable"
             android:backgroundTint="#2196F3" />
         <TextView
+            android:fontFamily="@font/mainfont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -36,12 +37,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:hint="이름"
+        android:fontFamily="@font/mainfont"
         android:onClick="onJoinEditTextClick"
         android:singleLine="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/joinToolbar" />
     <TextView
+        android:fontFamily="@font/mainfont"
         android:id="@+id/joinNameTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,6 +56,7 @@
         android:textColor="#ff0000"/>
 
     <EditText
+        android:fontFamily="@font/mainfont"
         android:id="@+id/joinIdEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,6 +70,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/joinNameEt" />
     <TextView
+        android:fontFamily="@font/mainfont"
         android:id="@+id/joinIdTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,6 +82,7 @@
         android:textColor="#ff0000"/>
 
     <EditText
+        android:fontFamily="@font/mainfont"
         android:id="@+id/joinPwEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -91,6 +97,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/joinIdEt" />
     <TextView
+        android:fontFamily="@font/mainfont"
         android:id="@+id/joinPwTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -102,6 +109,7 @@
         android:textColor="#ff0000"/>
 
     <EditText
+        android:fontFamily="@font/mainfont"
         android:id="@+id/joinPwCfEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -116,6 +124,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/joinPwEt" />
     <TextView
+        android:fontFamily="@font/mainfont"
         android:id="@+id/joinPwCfTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -127,6 +136,7 @@
         android:textColor="#ff0000"/>
 
     <EditText
+        android:fontFamily="@font/mainfont"
         android:id="@+id/joinTelEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -140,6 +150,7 @@
         app:layout_constraintTop_toBottomOf="@id/joinPwCfEt" />
 
     <Button
+        android:fontFamily="@font/mainfont"
         android:id="@+id/joinJoinBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -148,6 +159,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="30dp"
+        android:background="@drawable/ss"
         android:layout_marginRight="30dp"
         android:text="등록" />
 

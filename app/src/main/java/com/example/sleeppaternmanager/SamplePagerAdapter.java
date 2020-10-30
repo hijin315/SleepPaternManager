@@ -37,8 +37,9 @@ public class SamplePagerAdapter extends PagerAdapter {
 
     @NonNull @Override public Object instantiateItem(@NonNull ViewGroup view, int position) {
         TextView textView = new TextView(view.getContext());
-        textView.setText(String.valueOf(position + 1));
-        textView.setBackgroundColor(0xff000000 | random.nextInt(0x00ffffff));
+        //textView.setText(String.valueOf(position + 1));
+        //textView.setBackgroundColor(0xff000000 | random.nextInt(0x00ffffff));
+        textView.setBackgroundResource(R.drawable.notice3);
         textView.setGravity(Gravity.CENTER);
         textView.setTextColor(Color.WHITE);
         textView.setTextSize(48);
